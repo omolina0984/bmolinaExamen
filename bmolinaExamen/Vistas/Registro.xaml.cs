@@ -20,9 +20,17 @@ namespace bmolinaExamen.Vistas
 
         private void btnGuardar_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Informacion", "Elemento guardado con Exito", "ok");
+            if (txtNombre.Text != "")
+            {
+                DisplayAlert("Informacion", "Elemento guardado con Exito", "ok");
 
-            Navigation.PushAsync(new Resumen(lblUsuario.Text,txtNombre.Text,txtMontoInicial.Text, txtPagoMensual.Text));
+                Navigation.PushAsync(new Resumen(lblUsuario.Text, txtNombre.Text, txtMontoInicial.Text, txtPagoMensual.Text));
+            }
+            else
+            {
+                DisplayAlert("Informacion", "Ingrese el nombre", "ok");
+            }
+
         }
 
         private void btnCalcular_Clicked(object sender, EventArgs e)
@@ -32,7 +40,7 @@ namespace bmolinaExamen.Vistas
             var montoInicial = Convert.ToDouble(txtMontoInicial.Text);
             if (montoInicial < 4000)
             {
-                txtPagoMensual.Text= (( (costo-montoInicial)/5)-interes).ToString();
+                txtPagoMensual.Text= (( (costo-montoInicial)/5)+interes).ToString();
                 btnGuardar.IsEnabled = true;
             }
             else

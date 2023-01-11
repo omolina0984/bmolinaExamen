@@ -6,7 +6,7 @@
         <StackLayout>
 
 
-            <Label Text="Ventana Resumen   Usuario:" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18"/>
+            <Label Text="Ventana Resumen   " HorizontalTextAlignment="Center" TextColor="Black" FontSize="18"/>
             <Label x:Name="lblUsuario" HorizontalOptions="End"/>
             <Grid>
                 <Grid.RowDefinitions>

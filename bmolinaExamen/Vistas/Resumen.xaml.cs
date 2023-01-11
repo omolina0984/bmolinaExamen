@@ -15,7 +15,7 @@ namespace bmolinaExamen.Vistas
         public Resumen(string login, string nombre, string Inicial, string Pmensual)
         {
             InitializeComponent();
-            lblUsuario.Text = "Usuario:" + login;
+            lblUsuario.Text =  login;
             txtNombre.Text = nombre;
             txtTotal.Text = ((Convert.ToDouble(Pmensual)*5)+Convert.ToDouble(Inicial)).ToString();
         }
